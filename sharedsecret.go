@@ -128,3 +128,15 @@ func prime128Value() *big.Int {
 	p.Sub(p, big.NewInt(1))
 	return p
 }
+
+func Add(A Share, B Share) (Share, error) {
+	c := Share{}
+	if A.x.Cmp(B.x) != 0 {
+		err := errors.New("index mismatch")
+		return c, err
+	}
+	c.x = A.x
+	c.y = A.y.Add(A.y, B.y)
+	c.y = c.y.Mod(c.y, prime128)
+	return c, nil
+}
