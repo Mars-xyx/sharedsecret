@@ -13,7 +13,7 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/posener/sharedsecret/internal/polynom"
+	"github.com/Mars-xyx/sharedsecret/internal/polynom"
 )
 
 // prime128 is a large prime number that fits into 128 bits (value of 2^127 - 1).
