@@ -24,6 +24,13 @@ type Share struct {
 	x, y *big.Int
 }
 
+func (s *Share) GetIndex() big.Int {
+	return *s.x
+}
+func (s *Share) GetValue() big.Int {
+	return *s.y
+}
+
 // New creates n Shares and a secret. k defines the minimum number of shares that should be
 // collected in order to recover the secret. Recovering the secret can be done by calling Recover
 // with more than k Share objects.
