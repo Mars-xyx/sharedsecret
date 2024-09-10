@@ -24,11 +24,11 @@ type Share struct {
 	x, y *big.Int
 }
 
-func (s *Share) GetIndex() big.Int {
-	return *s.x
+func (s *Share) GetIndex() *big.Int {
+	return s.x
 }
-func (s *Share) GetValue() big.Int {
-	return *s.y
+func (s *Share) GetValue() *big.Int {
+	return s.y
 }
 
 // New creates n Shares and a secret. k defines the minimum number of shares that should be
