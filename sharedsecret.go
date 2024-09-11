@@ -30,6 +30,12 @@ func (s *Share) GetIndex() *big.Int {
 func (s *Share) GetValue() *big.Int {
 	return s.y
 }
+func NewShare(x, y big.Int) Share {
+	share := new(Share)
+	*share.x = x
+	*share.y = y
+	return *share
+}
 
 // New creates n Shares and a secret. k defines the minimum number of shares that should be
 // collected in order to recover the secret. Recovering the secret can be done by calling Recover
